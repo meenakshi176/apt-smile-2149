@@ -15,7 +15,7 @@ import {
   DrawerCloseButton,
 } from "@chakra-ui/react";
 
-import Logo from "../Images/logo.png";
+import Logo from "../Images/mylogo.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import GameButton from "./GameButton";
 import { useNavigate, Link } from "react-router-dom";

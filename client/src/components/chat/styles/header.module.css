@@ -1,0 +1,31 @@
+.chat_section {
+  display: grid;
+  grid-template-rows: 10% 80% 10%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.chat_header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.2rem 2rem;
+  background: #006a43;
+}
+.reciever_card {
+  gap: 1rem;
+  color: white;
+  font-weight: bold;
+  text-transform: capitalize;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 55%;
+}
+.reciever_card img {
+  width: 20%;
+  height: 90%;
+  border-radius: 50%;
+}

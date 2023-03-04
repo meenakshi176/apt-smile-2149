@@ -1,6 +1,7 @@
 import { useContext } from "react";
-import { SocketContext } from "../Context/SocketContext";
-import { Button } from "@chakra-ui/react";
+import { SocketContext } from "../../Context/SocketContext";
+import btn_background_img from "../../Images/btn_background.png";
+import styles from "./styles.module.css";
 
 const GameButton = ({ name, type, color }) => {
   const { socket, navigate } = useContext(SocketContext);
@@ -18,15 +19,18 @@ const GameButton = ({ name, type, color }) => {
   };
 
   return (
-    <Button
-      bg={"transparent"}
-      _hover={{ color: "black", bg: "white" }}
-      fontSize={"20px"}
+    <button
+      className={styles.btn}
       color={color ? { color } : "white"}
       onClick={() => handleChange(type)}
     >
+      <img
+        src={btn_background_img}
+        alt="btn_background_img"
+        className={styles.btn_background_img}
+      />
       {name}
-    </Button>
+    </button>
   );
 };
 

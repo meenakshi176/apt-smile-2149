@@ -12,7 +12,7 @@ const ChatMessages = () => {
   const scrollRef = useRef();
 
   useEffect(() => {
-    socket.current = io("http://localhost:8080");
+    socket.current = io("http://localhost:4300");
     socket.current.emit("add-user", player_1);
   }, []);
 

@@ -13,7 +13,7 @@ const SocketContextProvider = ({ children }) => {
   const location = useLocation();
 
   useEffect(() => {
-    const socket = io("http://localhost:8080/");
+    const socket = io("http://localhost:4300/");
     setSocket(socket);
 
     socket.on("room:get", (payload) => {

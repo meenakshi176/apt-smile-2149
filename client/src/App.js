@@ -11,9 +11,8 @@ function App() {
         className="backgroundImage"
         alt="Background Image"
       />
-      <div>
-        <MainRoutes />
-      </div>
+
+      <MainRoutes />
     </div>
   );
 }

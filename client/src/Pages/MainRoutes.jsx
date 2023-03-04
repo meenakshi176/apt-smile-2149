@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Homepage from "./Homepage";
+import Homepage from "./Homepage/Homepage";
 import Result from "./Result";
 import Login from "../components/users/login";
 import Register from "../components/users/register";
@@ -9,8 +9,8 @@ import Room from "../Pages/Room/index.jsx";
 
 const MainRoutes = () => {
   const styles = {
-    width: "100%",
-    height: "80%",
+    width: "1000px",
+    height: "550px",
     backgroundColor: "#1d145563",
     borderRadius: "30px",
     boxShadow:
@@ -19,7 +19,6 @@ const MainRoutes = () => {
     overflow: "hidden",
     position: "relative",
     display: "flex",
-    padding: 20,
   };
 
   return (

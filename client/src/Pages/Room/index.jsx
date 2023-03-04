@@ -9,6 +9,8 @@ import win_img from "../../Images/win.png";
 import lose_img from "../../Images/lose.png";
 import boom_img from "../../Images/boom.png";
 import styles from "./styles.modules.css";
+import { Box, Flex } from "@chakra-ui/react";
+import Navbar from "../../components/Navbar";
 
 const Room = () => {
   const [result, setResult] = useState({
@@ -104,21 +106,24 @@ const Room = () => {
   };
 
   return (
-    <>
-      <img src={vs_img} alt="vs" className={styles.background_img} />
-      <PlayerOne result={result} />
-      <PlayerTwo result={result} />
-      {player_2 && <Controls />}
-      {resultText === "win" && (
-        <img src={win_img} alt="win_img" className={styles.win_img} />
-      )}
-      {resultText === "lose" && (
-        <img src={lose_img} alt="lose_img" className={styles.lose_img} />
-      )}
-      {resultText === "tie" && (
-        <img src={boom_img} alt="boom_img" className={styles.boom_img} />
-      )}
-    </>
+    <Flex width={"100%"} height={"100%"} flexDirection={"column"}>
+      <Navbar />
+      <Box>
+        <img src={vs_img} alt="vs" className={styles.background_img} />
+        <PlayerOne result={result} />
+        <PlayerTwo result={result} />
+        {player_2 && <Controls />}
+        {resultText === "win" && (
+          <img src={win_img} alt="win_img" className={styles.win_img} />
+        )}
+        {resultText === "lose" && (
+          <img src={lose_img} alt="lose_img" className={styles.lose_img} />
+        )}
+        {resultText === "tie" && (
+          <img src={boom_img} alt="boom_img" className={styles.boom_img} />
+        )}
+      </Box>
+    </Flex>
   );
 };
 

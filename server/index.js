@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const { connection } = require("./config/db");
 const socket = require("socket.io");
+const roomHandler = require("./roomHandler");
 require("dotenv").config();
 const app = express();
 app.use(
@@ -38,7 +39,7 @@ const io = socket(server, {
 });
 
 io.on("connection", (socket) => {
-  // roomHandler(io, socket, rooms);
+  roomHandler(io, socket, rooms);
   global.chatSocket = socket;
   socket.on("add-user", (userId) => {
     OnlineUsers.set(userId, socket.id);

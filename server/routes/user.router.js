@@ -53,7 +53,8 @@ userrouter.post("/login", async (req, res) => {
           res.send({
             msg: "Logged in SuccessFull",
             token: token,
-            user_name: user[0].name,
+            user_name: user[0].username,
+            user_email: user[0].email,
           });
         } else {
           res.send({ msg: "Wrong Credentials" });

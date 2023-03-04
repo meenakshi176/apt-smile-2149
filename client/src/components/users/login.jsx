@@ -31,8 +31,8 @@ const Login = () => {
           password: password,
         })
         .then((res) => {
+          console.log(res.data);
           localStorage.setItem("User_name", res.data.user_name);
-          console.log(res);
 
           alert(res.data.msg);
 
@@ -60,12 +60,13 @@ const Login = () => {
       <div>
         <Box w={{ base: "90%", sm: "90%", md: "60%", lg: "50%" }} m="auto">
           <Box borderBottomWidth="1px" w="100%">
-            <Box p="4" w="100%" bgColor="#d11243">
+            <Flex p="1" w="100%" margin={"auto"} justify="center">
               <Image
-                w="100%"
+                w="37%"
+                height={"37%"}
                 src="https://tse1.mm.bing.net/th?id=OIP.KrymDKoJnPUh28-L6Wj_JgHaEK&pid=Api&rs=1&c=1&qlt=95&w=198&h=111"
               />
-            </Box>
+            </Flex>
           </Box>
           <Stack spacing="24px" mt="10px">
             <Box w="100%">

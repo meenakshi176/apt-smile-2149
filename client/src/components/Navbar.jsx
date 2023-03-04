@@ -17,7 +17,7 @@ import {
 
 import Logo from "../Images/mylogo.png";
 import { GiHamburgerMenu } from "react-icons/gi";
-import GameButton from "./GameButton";
+import GameButton from "./GameButton/GameButton";
 import { useNavigate, Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -26,11 +26,11 @@ const Navbar = () => {
 
   const isAuth = localStorage.getItem("isAuth") || false;
 
-  const user_name = localStorage.getItem("user_name");
+  const user_name = localStorage.getItem("User_name");
 
   const handleLogout = () => {
     localStorage.removeItem("isAuth");
-    localStorage.removeItem("user_name");
+    localStorage.removeItem("User_name");
     localStorage.removeItem("Token");
 
     navigate("/");
@@ -62,16 +62,18 @@ const Navbar = () => {
         bg="transparent"
         p="0.5rem 0"
       >
-        <Box>
-          <Image
-            src={Logo}
-            alt="RPS"
-            cursor="pointer"
-            marginLeft="4%"
-            width={"75%"}
-            height={"75%"}
-          />
-        </Box>
+        <Link to={"/"}>
+          <Box>
+            <Image
+              src={Logo}
+              alt="RPS"
+              cursor="pointer"
+              marginLeft="4%"
+              width={"75%"}
+              height={"75%"}
+            />
+          </Box>
+        </Link>
 
         <Flex
           display={["none", "none", "flex", "flex"]}
@@ -80,20 +82,22 @@ const Navbar = () => {
           gap="1.5rem"
           fontSize={"20px"}
         >
-          <Flex alignItems="center" gap="0.3rem">
-            <Text
-              color="white"
-              _hover={{
-                color: "black",
-                bg: "white",
+          <Link to={"/"}>
+            <Flex alignItems="center" gap="0.3rem">
+              <Text
+                color="white"
+                _hover={{
+                  color: "black",
+                  bg: "white",
 
-                borderRadius: "10px",
-              }}
-              padding={2}
-            >
-              Home
-            </Text>
-          </Flex>
+                  borderRadius: "10px",
+                }}
+                padding={2}
+              >
+                Home
+              </Text>
+            </Flex>
+          </Link>
 
           <Flex alignItems="center" gap="0.3rem">
             <GameButton name="Create Room" type="friend" />
@@ -110,7 +114,7 @@ const Navbar = () => {
               fontSize={"20px"}
               onClick={handleLogin}
             >
-              {isAuth ? { user_name } : "Login"}
+              {isAuth ? user_name : "Login"}
             </Button>
           </Box>
 
@@ -143,13 +147,15 @@ const Navbar = () => {
             <DrawerCloseButton />
             <DrawerHeader>Explore</DrawerHeader>
             <DrawerBody background={"#2e1f8663"}>
-              <Flex m="25px auto" style={hamStyle}>
-                <Text>Home</Text>
-              </Flex>
+              <Link to={"/"}>
+                <Flex m="25px auto" style={hamStyle}>
+                  <Text>Home</Text>
+                </Flex>
+              </Link>
 
               <Flex m="25px auto" style={hamStyle}>
                 <GameButton
-                  name="Play with friend"
+                  name="Create Room"
                   type="friend"
                   color={"#2e1f8663"}
                 />
@@ -157,7 +163,7 @@ const Navbar = () => {
 
               <Flex m="25px auto" style={hamStyle}>
                 <GameButton
-                  name="Play with stranger"
+                  name="Join Room"
                   type="stranger"
                   color={"#2e1f8663"}
                 />
@@ -168,10 +174,24 @@ const Navbar = () => {
                   bg={"transparent"}
                   _hover={{ color: "black", bg: "white" }}
                   fontSize={"20px"}
+                  onClick={handleLogin}
                 >
-                  Login
+                  {isAuth ? user_name : "Login"}
                 </Button>
               </Box>
+
+              {isAuth && (
+                <Box display="flex" alignItems="center" color="white">
+                  <Button
+                    bg={"transparent"}
+                    _hover={{ color: "black", bg: "white" }}
+                    fontSize={"20px"}
+                    onClick={handleLogout}
+                  >
+                    Logout
+                  </Button>
+                </Box>
+              )}
             </DrawerBody>
           </DrawerContent>
         </Drawer>

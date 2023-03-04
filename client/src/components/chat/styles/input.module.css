@@ -1,0 +1,80 @@
+.chat_Input {
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: #a5c6ba;
+}
+.button_container {
+  display: flex;
+  align-items: center;
+  color: white;
+  gap: 1rem;
+}
+.emoji {
+  position: relative;
+}
+.emoji svg {
+  font-size: 2rem;
+  color: #ffff00c8;
+  cursor: pointer;
+}
+
+.input_container {
+  width: 100%;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: #ffffff;
+}
+.input_container input {
+  width: 90%;
+  height: 60%;
+  background-color: transparent;
+  border: none;
+  padding-left: 1rem;
+  font-size: 1.2rem;
+  outline: none;
+}
+.input_container input::selection {
+  background-color: #9a86f3;
+}
+.input_container input::placeholder {
+  color: black;
+}
+.input_container input::focus {
+  outline: none;
+}
+.input_container button {
+  padding: 0.3rem 2rem;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #10241d;
+  border: none;
+}
+.input_container button:hover {
+  background-color: #01100b;
+  border: none;
+  cursor: pointer;
+}
+svg {
+  font-size: 2rem;
+  color: white;
+}
+
+@media screen and (max-width: 1024px) {
+  .chat_Input {
+    padding: 0 1rem;
+    gap: 1rem;
+  }
+  .input_container button {
+    padding: 0.3rem 1rem;
+  }
+  button svg {
+    font-size: 1.8rem;
+  }
+}

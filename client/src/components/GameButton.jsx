@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import SocketContext from "../Context/SocketContext";
+import { SocketContext } from "../Context/SocketContext";
 import { Button } from "@chakra-ui/react";
 
 const GameButton = ({ name, type, color }) => {

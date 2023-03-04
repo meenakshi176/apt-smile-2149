@@ -5,6 +5,7 @@ import Result from "./Result";
 import Login from "../components/users/login";
 import Register from "../components/users/register";
 import { Box } from "@chakra-ui/react";
+import Room from "../Pages/Room/index.jsx";
 
 const MainRoutes = () => {
   const styles = {
@@ -28,6 +29,7 @@ const MainRoutes = () => {
         <Route path="/result" element={<Result />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Register />} />
+        <Route path="/room/:id" element={<Room />} />
       </Routes>
     </Box>
   );

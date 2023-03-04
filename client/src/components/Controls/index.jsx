@@ -1,9 +1,9 @@
 import { useState, useContext, useEffect } from "react";
-import { SocketContext } from "../../context/SocketContext";
-import rock_right_hand_img from "../../images/rock_right_hand.png";
-import paper_right_hand_img from "../../images/paper_right_hand.png";
-import scissors_right_hand_img from "../../images/scissors_right_hand.png";
-import styles from "./styles.module.css";
+import { SocketContext } from "../../Context/SocketContext";
+import rock_right_hand_img from "../../Images/rock_right_hand.png";
+import paper_right_hand_img from "../../Images/paper_right_hand.png";
+import scissors_right_hand_img from "../../Images/scissors_right_hand.png";
+import styles from "./styles.modules.css";
 
 function Controls() {
   const [option, setOption] = useState("");

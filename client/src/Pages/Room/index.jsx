@@ -1,14 +1,14 @@
 import { useEffect, useContext, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { SocketContext } from "../../context/SocketContext";
+import { SocketContext } from "../../Context/SocketContext";
 import PlayerOne from "../../components/PlayerOne";
 import PlayerTwo from "../../components/PlayerTwo";
 import Controls from "../../components/Controls";
-import vs_img from "../../images/vs.jpg";
-import win_img from "../../images/win.png";
-import lose_img from "../../images/lose.png";
-import boom_img from "../../images/boom.png";
-import styles from "./styles.module.css";
+import vs_img from "../../Images/vs.jpg";
+import win_img from "../../Images/win.png";
+import lose_img from "../../Images/lose.png";
+import boom_img from "../../Images/boom.png";
+import styles from "./styles.modules.css";
 
 const Room = () => {
   const [result, setResult] = useState({

@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState, useContext } from "react";
-import { SocketContext } from "../../context/SocketContext";
+import { SocketContext } from "../../Context/SocketContext";
 import PersonIcon from "@mui/icons-material/Person";
 import StarIcon from "@mui/icons-material/Star";
-import rock_left_hand_img from "../../images/rock_left_hand.png";
-import paper_left_hand_img from "../../images/paper_left_hand.png";
-import scissors_left_hand_img from "../../images/scissors_left_hand.png";
+import rock_left_hand_img from "../../Images/rock_left_hand.png";
+import paper_left_hand_img from "../../Images/paper_left_hand.png";
+import scissors_left_hand_img from "../../Images/scissors_left_hand.png";
 import styles from "./styles.module.css";
 
 const PlayerOne = ({ result }) => {

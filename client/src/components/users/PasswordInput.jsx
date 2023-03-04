@@ -14,6 +14,7 @@ export function PasswordInput({ password, setPassword }) {
         placeholder="Enter password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
+        color={"white"}
       />
       <InputRightElement width="4.5rem">
         <Button
